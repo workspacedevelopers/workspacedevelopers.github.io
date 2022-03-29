@@ -1,0 +1,984 @@
+/*
+
+@Author: Themezinho
+@URL: http://www.themezinho.net
+ 
+This file contains the styling for the actual theme, this
+is the file you need to edit to change the look of the
+theme.
+
+
+	// Table of contents //
+
+		01. CUSTOM FONTS
+		02. BODY
+		03. HTML TAGS
+		04. FORM ELEMENTS
+		05. LINKS
+		06. CUSTOM CLASSES
+		07. SPACINGS
+		08. CUSTOM CONTAINER
+		09. ODOMETER
+		10. SWIPER BULLETS
+		11. HAMBURGER
+		12. ACCORDION
+		13. SEARCH BOX
+		14. SIDE WIDGET 
+		15. CUSTOM BUTTON
+		16. WHITE SPACES
+		17. PAGE TRANSITION
+		18. NAVBAR
+		19. SLIDER
+		20. PAGE HEADER
+		21. CONTENT SECTION
+		22. SECTION TITLE
+		23. ICON CONTENT
+		24. SIDE IMAGE
+		25. COUNTER BOX
+		26. CONTACT FORM
+		27. GOOGLE MAPS
+		28. ISOTOPE FILTER
+		29. PROJECTS
+		30. PROJECT TEXT
+		31. PROJECT SLIDER
+		32. SECTOR BOX
+		33. CALCULATOR
+		34. STEP BOX
+		35. INFO BOX DARK
+		36. CTA YELLOW BOX
+		37.SERVICE LIST BOX
+		38.CUSTOM LIST
+		39.CERTIFICATE
+		40.OUR HISTORY
+		41.CORE VALUES BOX
+		42.DIRECTOR TEAM
+		43.SALES TEAM
+		44.TAB CONTENT
+		45.VIDEO BOX
+		46.TESTIMONIALS SLIDER
+		47.LOGO ITEMS
+		48.RECENT NEWS
+		49.NEWS BOX
+		50.SIDEBAR
+		51.PAGINATION
+		52.FOOTER
+		53. RESPONSIVE MEDIUM FIXES
+		54. RESPONSIVE TABLET FIXES
+		55. RESPONSIVE MOBILE FIXES
+
+	
+
+*/
+
+
+
+@mixin font-smoothing{-webkit-font-smoothing: antialiased; 
+	text-rendering: optimizeLegibility;	
+	-moz-osx-font-smoothing: grayscale;}
+
+@mixin transition-cubic{-webkit-transition: all 0.3s ease;	
+	-moz-transition: all 0.3s ease;	transition: all 0.3s ease;
+	transition-duration: 500ms;	-webkit-transition-duration: 500ms;	
+	transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+	-webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1)}
+
+@mixin transition-bg{-webkit-transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out; 
+	-ms-transition: all .4s ease-in-out; 
+	-o-transition: all .4s ease-in-out; 
+	transition: all .4s ease-in-out;}
+
+@mixin transition{-webkit-transition: all .25s ease-in-out;
+	-moz-transition: all .25s ease-in-out; 
+	-ms-transition: all .25s ease-in-out; 
+	-o-transition: all .25s ease-in-out; 
+	transition: all .25s ease-in-out;}
+
+
+$color-dark : #0b0b0b;
+$color-main : #feed01;
+
+
+/* CUSTOM FONTS */
+
+@font-face {
+	font-family: 'Mont';
+	src: url('../fonts/Mont-Regular.eot');
+	src: local('☺'), 
+		url('../fonts/Mont-Regular.woff') format('woff'), 
+		url('../fonts/Mont-Regular.ttf') format('truetype'), 
+		url('../fonts/Mont-Regular.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Mont';
+	src: url('../fonts/Mont-Bold.eot');
+	src: local('☺'), 
+		url('../fonts/Mont-Bold.woff') format('woff'), 
+		url('../fonts/Mont-Bold.ttf') format('truetype'), 
+		url('../fonts/Mont-Bold.svg') format('svg');
+	font-weight: 600;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Mont';
+	src: url('../fonts/Mont-Heavy.eot');
+	src: local('☺'), 
+		url('../fonts/Mont-Heavy.woff') format('woff'), 
+		url('../fonts/Mont-Heavy.ttf') format('truetype'), 
+		url('../fonts/Mont-Heavy.svg') format('svg');
+	font-weight: 800;
+	font-style: normal;
+}
+
+
+
+
+
+*{outline: none !important;}
+body{margin: 0; padding: 0; font-family: 'Mont'; font-size: 17px; color: $color-dark; @include font-smoothing; overflow-x: hidden;}
+
+
+/* HTML TAGS */
+img{max-width: 100%;}
+figure{margin-bottom: 20px;}
+
+/* FORM ELEMENTS */
+input[type="text"], input[type="email"], input[type="search"], input[type="password"] {width: 420px; max-width: 100%; height: 68px; border: 2px solid #e8e8e8; padding: 0 30px;}
+
+input[type="submit"], input[type="button"], button[type="button"], button[type="submit"] { height: 68px; border: none; background: $color-main; color: $color-dark; font-weight: 800; font-size: 13px; padding: 0 50px; letter-spacing: 1px;}
+
+textarea{width: 420px; max-width: 100%; height: 128px; border: 2px solid #e8e8e8; padding: 30px;}
+
+
+/* LINKS */
+a{color: $color-dark;}
+a:hover{text-decoration: underline; color:$color-dark;}
+
+
+
+/* CUSTOM CLASSES */
+.overflow{overflow: hidden;}
+
+/* SPACINGS */
+.no-spacing{ margin: 0 !important; padding: 0 !important;}
+.no-bottom-spacing{margin-bottom: 0 !important; padding-bottom: 0 !important;}
+
+/* CUSTOM CONTAINER */
+@media (min-width: 1170px) { .container { max-width: 1100px; } }
+@media (min-width: 1280px) { .container { max-width: 1260px; } }
+
+
+
+/* ODOMETER */
+.odometer-formatting-mark{display: none;}
+.odometer.odometer-auto-theme, .odometer.odometer-theme-car{padding: 0;}
+.odometer.odometer-auto-theme .odometer-digit, .odometer.odometer-theme-car .odometer-digit{padding: 0;}
+.odometer.odometer-auto-theme .odometer-digit .odometer-value, .odometer.odometer-theme-car .odometer-digit .odometer-value{text-indent: -5px;}
+.odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-car .odometer-digit .odometer-digit-inner{left: 0;}
+.odometer.odometer-auto-theme .odometer-digit .odometer-value, .odometer.odometer-theme-car .odometer-digit .odometer-value{text-indent: 0;}
+
+
+
+/* SWIPER BULLETS */
+.swiper-pagination{width: 100%; display: block; position: relative; text-align: center;
+	.swiper-pagination-bullet{ width: 50px; height: 4px; border-radius: 0 !important;}
+	.swiper-pagination-bullet-active{background: $color-main;}}
+
+
+/* HAMBURGER */
+.hamburger { width: 32px; height: 38px; position:relative; cursor:pointer; display: inline-block; padding-top: 3px;
+	span{display:block; background:#fff;}
+  #hamburger { position:absolute; height:100%; width:100%;
+    span { width:100%; height:2px; position:relative; top:0; left:0; margin:6px 0; transition: width ease 0.25s;
+      &:nth-child(1){ transition-delay:.5s; width: 100%; }
+      &:nth-child(2){ transition-delay:.625s; width: 70%;}
+      &:nth-child(3){ transition-delay:.75s; width: 100%; left: 0;}}}
+  #cross { position:absolute; height:34px; width:34px; transform:rotate(45deg); left: -2px; top: 2px; 
+	  span{  
+      &:nth-child(1){ height:0%; width:2px; position:absolute; top:0; right:16px; transition-delay:0s; transition: height ease 0.25s; }
+      &:nth-child(2){ width:0%; height:2px; position:absolute; left:0; top:16px; transition-delay:.25s; transition: width ease 0.25s; } } }}
+
+.hamburger.open {
+  #hamburger {
+    span { width:0%;
+      &:nth-child(1){ transition-delay:0s; }
+      &:nth-child(2){ transition-delay:.125s;}
+      &:nth-child(3){ transition-delay:.25s; } }}
+  #cross {
+    span {
+      &:nth-child(1){ height:100%; transition-delay:.625s; } }
+    span {
+      &:nth-child(2){ width:100%; transition-delay:.375s; } } } }
+
+
+
+/* ACCORDION */
+.accordion{ width: 100%; float: left; background: #fff; padding: 0; padding-right: 50px;
+	.card{ background: none; border-radius: 0; border:none; 
+		.card-header{ background: none; padding:0;  border:none;
+			a{ width: 100%; float: left; font-weight: 600; padding: 30px 0; color:$color-dark; font-weight: 600; border-bottom:4px solid #eaebee; font-size: 19px;
+				i{float: right;}
+				&:hover{border-color: $color-main; text-decoration: none;}}}
+		.card-body{ width: 100%; line-height: 26px; padding: 20px 0;}
+	[aria-expanded="true"]{ border-color: $color-main !important;}}}
+
+
+
+
+/* SEARCH BOX */
+.search-box{width: 100%; height: 100vh; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; position: fixed; left: 0; top: 0; z-index: 3; background: $color-dark; @include transition-cubic; opacity: 0; visibility: hidden; color: #fff;
+	.inner{width: 50vw; max-width: 700px; margin: 0 auto; text-align: center;
+		form{width: 100%; display: block;
+			input[type="search"]{ width: 100%; height: 70px; border:none; border-bottom: 4px solid #232222; background: none; font-size: 20px; margin-bottom: 30px; color: #fff;}
+			input[type="submit"]{ height: 70px; background: $color-main; border:none; font-weight: 600; padding: 0 60px;}}}
+	&.active{opacity: 1; visibility: visible;}}
+
+
+
+
+/* SIDE WIDGET */
+.side-widget{width: 400px; height: 100vh; max-width: 100%; display: flex; flex-wrap: wrap; align-items: center; position: fixed; left: -100%; top: 0; @include transition-cubic; background: #232222; background-image: url("../images/header-pattern.png"); background-position: center; background-size: cover; z-index: 5; box-shadow: 0 0 60px #000; padding:20px 30px; color: #fff;
+	.inner{display: inline-block; overflow-y: auto;}
+	.logo{width: 100%; display: block; margin-bottom: 40px; 
+		img{height: 40px;}}
+	.show-mobile{display: none;}
+	.hide-mobile{display: block; overflow-x: hidden;}
+	.gallery{ display: flex; flex-wrap: wrap; margin-left: -3px; margin-right: -3px;
+		img{width: 50%; padding: 0 3px;}}
+	p{width: 100%; display: block;}
+	.widget-title{width: 100%; display: block; font-weight: 600; color: $color-main; font-size: 13px; margin-bottom: 10px; margin-top: 20px;}
+	.address{width: 100%; display: block; margin-top: 20px;}
+	.social-media{width: 100%; display: block; margin: 0; padding: 0;
+		li{display: inline-block; margin-right: 20px; padding: 0; list-style: none;
+			a{color: #fff; font-size: 13px; font-weight: 600;}}}
+	.languages{width: 100%; display: block; margin-bottom: 20px; margin-top: 20px;
+		ul{width: 100%; display: block; margin: 0; padding: 0;
+			li{display: inline-block; margin-right: 10px; padding: 0; list-style: none;
+				a{color: #fff; font-weight: 600; font-size: 18px;}}}}
+	.site-menu{width: 100%; display: block; margin-bottom: 20px; margin-top: 20px;
+		ul{width: 100%; display: block; margin: 0; padding: 0;
+			li{display: block; margin:3px 0; padding: 0; list-style: none;
+				ul{display: none; padding-left: 10px; margin-bottom: 10px;}
+				i{display: inline-block; margin-left: 7px;}
+				a{color: #fff; font-size: 18px; font-weight: 600;}}}}
+	small{font-size: 11px; width: 100%; display: block; margin-top: 20px;}
+	&.active{left: 0;}}
+
+
+
+
+/* CUSTOM BUTTON */
+.custom-button{display: inline-block; height: 68px; line-height: 68px; padding: 0 40px; background: $color-main; color: $color-dark; font-size: 13px; font-weight: 600; @include transition;
+				i{display: inline-block; margin-left: 10px; font-size: 20px; transform: translateY(3px); @include transition;}
+				&:hover{text-decoration: none;
+					i{margin-left: 20px;}}
+	&.top-spacing{margin-top: 30px;}}
+
+
+
+
+
+/* WHITE SPACES */
+.white-space-top{ position: relative;
+	&:before{content: ""; width: 100vw; height: 148px; background: #fff; position: absolute; left: 0; top: 0;}}
+.white-space-bottom{position: relative;
+	&:after{content: ""; width: 100%; height: 148px; background: #fff; position: absolute; left: 0; bottom: 0;}}
+
+
+
+
+/* PAGE TRANSITION */
+.first-transition{width: 100%; height: 100%; position: fixed; z-index: 9; right: 0; top:0; background: $color-main; animation: first-transition 1s; animation-fill-mode: forwards;}
+@keyframes first-transition {
+   from {right: 0;}
+  to {right: -100%;}
+}
+.page-transition{width: 0; height: 100%; position: fixed; z-index: 9; left: 0; top:0; background: $color-main; transition: all ease 1s;
+	&.active{width: 100%;}}
+
+
+
+
+/* NAVBAR */
+.navbar{width: 100%; display: flex; flex-wrap: wrap; padding: 20px 0; position: fixed; left: 0; top: 0; z-index: 4; transition: top ease 1s;
+	&.sticky{background: $color-dark;}
+	&.nav-down{ top: 0;}
+	&.nav-up{ top: -100%;}
+	.logo{ margin-left:0; 
+		a{display: block; margin: 0;
+			img{height: 40px;}}}
+	.languages{display: inline-block; margin: 0 20px;
+		ul{display: block; margin: 0; padding: 0;
+			li{ display: inline-block; margin: 0 5px; padding: 0; list-style: none;
+				a{ display:inline-block; color: #fff;  position: relative;
+						&:hover{ text-decoration: none;}
+						&:before { content: ''; display: block; position: absolute; left: 0; bottom: 0; height: 2px; width: 0; transition: width 0s ease, background .25s ease;}
+						&:after { content: ''; display: block; position: absolute; right: 0; bottom: 0; height: 2px; width: 0; background: $color-main; transition: width .25s ease; }
+						&:hover:before { width: 100%; background: $color-main; transition: width .25s ease;}
+						&:hover:after { width: 100%; background: transparent; transition: all 0s ease;}}}}}
+	.site-menu{display: inline-block; margin: 0 20px;
+		ul{display: block; margin: 0; padding: 0;
+			li{ display: inline-block; margin: 0 10px; padding: 0; list-style: none; position: relative;
+				ul{ display: none; position: absolute; left: -30px; top: calc(100% + 20px); background: $color-main; padding: 30px;
+					&:before{content: ""; width: 100%; height: 20px; position: absolute; left: 0; top: -20px;}
+					li{width: 100%; display: block; margin: 0; margin-bottom: 10px; white-space: nowrap;
+						&:last-child{margin-bottom: 0;}
+						a{color: $color-dark; display: block; padding: 0;}}}
+				&:hover ul{display: block;}
+					a{ display:inline-block; color: #fff;  position: relative;
+						&:hover{ text-decoration: none;}
+						&:before { content: ''; display: block; position: absolute; left: 0; bottom: 0; height: 2px; width: 0; transition: width 0s ease, background .25s ease;}
+						&:after { content: ''; display: block; position: absolute; right: 0; bottom: 0; height: 2px; width: 0; background: $color-main; transition: width .25s ease; }
+						&:hover:before { width: 100%; background: $color-main; transition: width .25s ease;}
+						&:hover:after { width: 100%; background: transparent; transition: all 0s ease;}}}}}
+	.search{display: inline-block; color: #fff; font-size: 24px; cursor: pointer;}
+	.hamburger{display: inline-block; color: #fff;}
+	.navbar-button{height: 58px; line-height: 58px; padding: 0 40px; color:$color-dark; background: $color-main; font-size: 13px; font-weight: 600; 
+		i{font-size: 20px; display: inline-block; transform: translateY(3px); margin-right: 5px; }
+		&:hover{text-decoration: none;}}}
+
+
+
+/* SLIDER */
+.slider{width: 100%; height: 100vh; display: flex; flex-wrap: wrap; background-color:$color-dark; background-image: url("../images/header-pattern.png"); background-size: cover; position: relative;
+	.container{position: relative; padding-top: 150px; display: flex; flex-wrap: wrap;}
+	.slider-content{width: calc(50% - 120px); position: relative; overflow: hidden; margin: 0; margin-right: 40px;
+		.swiper-slide{ display: flex; align-items: center;}
+		.inner{width: 100%; display: block; color: #fff; padding-bottom: 100px;
+			h2{font-size: 60px; font-weight: 800;
+				b{-webkit-text-stroke: 1px #fff; text-stroke: 1px #fff; -webkit-text-fill-color: transparent; color: transparent;}}
+			p{margin-bottom: 70px;}
+			a{display: inline-block; height: 68px; line-height: 68px; padding: 0 40px; background: $color-main; color: $color-dark; font-size: 13px; font-weight: 600; @include transition;
+				i{display: inline-block; margin-left: 10px; font-size: 20px; transform: translateY(3px); @include transition;}
+				&:hover{text-decoration: none; box-shadow: 0 20px 20px #000;
+					i{margin-left: 20px;}}}}
+		.controls{width: 90%; display: flex; flex-wrap: wrap; align-items: center; position: absolute; left: 0; bottom: 0; z-index: 1; padding: 30px;
+		.swiper-pagination{width: auto; display: inline-block; position: static; font-size: 26px; color: #9a9a9a;
+			.swiper-pagination-current{font-size: 54px; color: $color-dark;}}
+			.button-prev{ width: 80px; height: 80px; line-height: 80px; display: inline-block; text-align: center; background: #f2f3f5; border-radius: 50%; color: $color-dark; @include transition; margin-left: auto;
+				&:hover{background: $color-main;}}
+			.button-next{ width: 80px; height: 80px; line-height: 80px; display: inline-block; text-align: center; background: #f2f3f5; border-radius: 50%; color: $color-dark; @include transition; margin-left: 2px; margin-right: 0;
+				&:hover{background: $color-main;}}}}
+	.slider-main{width: calc(50vw + 80px); height: calc(100vh - 150px); overflow: hidden; margin: 0; position: absolute; left: calc(50% - 80px); top: 150px;
+		.slide-image{ width: 100%; height: 100%; display: inline-block; background-position: center !important; background-size: cover !important;}
+		.header-box{width: 160px; height: 180px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; text-align: center; background: $color-main; position: absolute; left: 30px; bottom: 30px; z-index: 1;
+			&:after{content: ""; width: 0; height: 0; border-style: solid; border-width: 0 0 14px 14px; border-color: transparent transparent $color-dark transparent; position: absolute; right: 4px; bottom: 4px;}
+			b{font-size: 90px; height: 90px; line-height: 1; font-weight: 400; display: inline-block; transform: translateY(8px);}
+			small{display: inline-block; line-height: 1.2; font-weight: 600; letter-spacing: 2px; transform: translateY(-8px);}}}}
+
+
+
+/* PAGE HEADER */
+.page-header{width: 100%; height: 500px; display: flex; flex-wrap: wrap; align-items: center; background-color:$color-dark; background-image: url("../images/header-pattern.png"); background-size: cover; position: relative;
+	.container{position: relative; color: #fff; padding-top: 98px;
+		h6{ width: 100%; display: block; opacity: 0.7; margin-bottom: 50px;}
+		h1{ width: 100%; display: block; font-size: 7vw; font-weight: 800; line-height: 1;}
+		ul{width: 100%; display: block; margin: 0; padding: 0; 
+			li{display: inline-block; margin-right: 10px; padding: 0; font-size: 13px; font-weight: 600; color: $color-main;
+				&:last-child:after{display: none;}
+				&:after{content: "/"; display: inline-block; margin-left: 15px; color: #fff;}
+				a{color: #fff;}}}}}
+
+
+
+
+/* CONTENT SECTION */
+.content-section{width: 100%; display: block; padding: 80px 0; position: relative;}
+.section-note{width:100%; display: block; margin-top:30px; text-align: center; font-size: 14px;}
+
+
+
+
+/* SECTION TITLE */
+.section-title{width: 100%; display: block; text-align: center; margin-bottom: 50px;
+	h6{ display: inline-block; position: relative; z-index: 1; font-weight: 800; letter-spacing: 3px; font-size: 18px;
+		&:before{content: ""; width: 100%; height: 6px; background: $color-main; position: absolute; left: 0; bottom: 0; z-index: -1; mix-blend-mode: difference;}}
+	h2{width: 100%; display: block; margin-bottom: 0; font-size: 47px;}
+	p{width: 100%; display: block; margin-bottom: 0; margin-top: 20px;}}
+
+
+
+/* ICON CONTENT */
+.icon-content{width: 100%; display: flex; flex-wrap: wrap; border: 1px solid #e8e8e8; padding:45px 30px; /* box-shadow: 7px 7px 0 #f9f9f9; */ position: relative;
+	&:before{content: ""; width: 100%; height: 100%; background: $color-main; position: absolute; left: 0; top: 0; @include transition; opacity: 0; z-index: -1; box-shadow: 0 30px 30px #eee;}
+	&:hover{ border-color: $color-main;}
+	&:hover:after{content: ""; width: 30%; height: 70px; background: url("../images/pattern-dot.png"); background-size: 12px 12px;  position: absolute; right: -25px; bottom: -25px;}
+	&:hover:before{transform: scale(1.05); opacity: 1;}
+	figure{width: 100%; display: block; margin-bottom: 50px;
+		img{height: 70px;}}
+	h3{ width: 100%; display: block; margin-bottom: 40px;}
+	small{width: 100%; display: block; margin-bottom: 70px; font-size: 16px;}
+	a{width: 50px; height: 50px; line-height: 50px; display: inline-block; background: $color-dark; color: #fff; text-align: center; font-size: 20px;
+		&:hover{ text-decoration: none;}}}
+
+
+
+/* SIDE IMAGE */
+.side-image{width: 100%; display: block; margin: 0;
+	img{width: 100%;}}
+
+
+/* SIDE CONTENT */
+.side-content{width: 100%; display: block; margin: 0; padding-left: 50px;
+	figure{width: 100%; display: block; margin: 0;
+		img{height: 80px;}}
+	h6{width: 100%; display: block; margin-top: 30px; font-weight: 600; margin-bottom: 2px;}
+	h5{font-weight: 600; margin-bottom: 20px; font-size: 22px;}
+	b{font-weight: 600;}
+	u{text-decoration: none; position: relative;
+		&:before{content: ""; width: 100%; height: 6px; background: $color-main; position: absolute; left: 0; bottom: 0; mix-blend-mode: multiply;}}
+	p{margin-bottom: 25px;}
+	small{width: 100%; display: block; font-size: 13px; opacity: 0.6;}}
+
+
+/* COUNTER BOX */
+.col-lg-3:nth-child(even) .counter-box{margin-top: 50%;}
+.counter-box{width:100%; display:block; border: 1px solid #e8e8e8; padding: 30px; position: relative; @include transition;
+	&:hover{transform: translateY(-20px); box-shadow: 0 30px 30px #eee;}
+	&:hover h6:before{width: 0;}
+	&:after{content: ""; width: 0; height: 0; border-style: solid; border-width: 0 0 14px 14px; border-color: transparent transparent #e8e8e8 transparent; position: absolute; right: 4px; bottom: 4px;}
+	.odometer{display: inline-block; font-size: 70px;}
+	.value{font-size: 24px;}
+	h6{ display: inline-block; font-weight: 800; letter-spacing: 2px; position: relative;
+		&:before{content: ""; width: 100%; height: 6px; background: $color-main; position: absolute; left: 0; bottom: 0; mix-blend-mode: multiply; @include transition;}}
+	p{font-size: 13px; padding-right: 5%;}}
+
+
+
+
+/* CONTACT BOX */
+.contact-box{width:100%; display:block; border: 1px solid #e8e8e8; padding: 30px; position: relative; @include transition;
+	&:hover{transform: translateY(-20px); box-shadow: 0 30px 30px #eee;}
+	&:hover h6:before{width: 0;}
+	&:after{content: ""; width: 0; height: 0; border-style: solid; border-width: 0 0 14px 14px; border-color: transparent transparent #e8e8e8 transparent; position: absolute; right: 4px; bottom: 4px;}
+	figure{width: 100%; display: block; margin-bottom:20px;
+		img{height: 80px;}}
+	h6{ display: inline-block; font-weight: 800; letter-spacing: 2px; position: relative;
+		&:before{content: ""; width: 100%; height: 6px; background: $color-main; position: absolute; left: 0; bottom: 0; mix-blend-mode: multiply; @include transition;}}
+	p{font-size: 20px; padding-right: 5%;}}
+
+
+/* GOOGLE MAPS */
+.google-maps{width: 100%; height: 520px; display: block; border: none;}
+.contact-form{width: 100%; display: block; padding:50px; background: #fff; position: relative; z-index: 1; margin-bottom: -70%; box-shadow: 0 0 30px rgba(0,0,0,0.1);
+	input[type="text"]{width: 100%;}
+	textarea{width: 100%;}
+	.form-group:last-child{margin-bottom: 0;}}
+
+
+
+
+
+/* ISOTOPE FILTER */
+.isotope-filter{width: 100%; display: block; margin-bottom: 40px; padding: 0;
+	li{display: inline-block; margin-right: 30px; padding: 0; list-style: none; cursor: pointer; position: relative; font-weight: 600;
+		&:last-child{margin-right: 0;}
+		&.current:before{width: 100%;}
+		&:hover:before{width: 100%;}
+		&:before{content: ""; width: 0; height: 4px; background: $color-main; position: absolute; left: 0; bottom: 0; @include transition;}}}
+
+
+
+/* PROJECTS */
+.projects{width: calc(100% + 60px); display: flex; flex-wrap: wrap; margin: 0 -30px; padding: 0;
+	li{width: 50%; display: inline-block; margin-bottom: 50px; padding: 0 30px; list-style: none;
+		.project-box{width: 100%; display: flex; flex-wrap: wrap; margin: 0; padding-bottom: 50px; position: relative;
+			&:hover img{filter: grayscale(0);}
+			&:hover figcaption{background: $color-main; color: $color-dark;}
+			img{width: 100%; display: block; filter: grayscale(1); @include transition;}
+			figcaption{width: 70%; position: absolute; left: 30px; bottom: 15px; padding: 30px; background: $color-dark; color: #fff; @include transition; 
+				&:after{content: ""; width: 20%; height: 55px; background: url("../images/pattern-dot.png"); background-size: 12px 12px;  position: absolute; right: -25px; bottom: -25px;}
+				h5{ display: block; font-size: 30px; font-weight: 800; margin: 0;}
+				p{width: 100%; display: block; margin: 0; display: none;}}}}}
+
+
+
+/* PROJECT TEXT */
+.project-specifications{width: calc(100% - 40px); display: block; background: #fff; box-shadow: 0 0 30px #eee; padding: 50px; margin-left: 40px;
+	table{width: 100%; font-size: 15px;
+		tr td:first-child{font-weight: 600; width: 120px; padding: 10px 0;}}}
+
+
+/* PROJECT SLIDER */
+.project-slider{width: 100%; display: block; position: relative; overflow: hidden;
+	.swiper-slide{max-width: 50vw;
+		&.swiper-slide-active .project-box figcaption{opacity: 1;}
+		.project-box{width: 100%; display: flex; flex-wrap: wrap; margin: 0; padding-bottom: 50px; position: relative;
+			&:hover img{filter: grayscale(0);}
+			img{width: 100%; display: block; filter: grayscale(1); @include transition;}
+			figcaption{width: 70%; position: absolute; left: 30px; bottom: 15px; padding: 30px; background: $color-main; color: $color-dark; @include transition; opacity: 0;
+				&:after{content: ""; width: 20%; height: 55px; background: url("../images/pattern-dot.png"); background-size: 12px 12px;  position: absolute; right: -25px; bottom: -25px;}
+				h5{ display: block; font-size: 30px; font-weight: 800;}
+				p{width: 100%; display: block; margin: 0;}}}}
+	.swiper-pagination{ width: 100%; float: left; position: static;  margin-top: 20px;}}
+
+
+
+
+/* SECTOR BOX */
+.sector-box{width: 100%; display: flex; flex-wrap: wrap; padding: 40px; box-shadow: 1px 0 0 0 #eee, 0 1px 0 0 #eee, 1px 1px 0 0 #eee, 1px 0 0 0 #eee inset, 0 1px 0 0 #eee inset; position: relative; color: $color-dark; @include transition;
+	&:hover{ box-shadow: none; z-index: 1; text-decoration: none; background: $color-main; }
+	&:hover i{opacity: 1;}
+	span{font-weight: 600;}
+	i{ margin-left: auto; opacity: 0.4; transform: translateY(3px);}}
+
+
+
+
+
+/* CALCULATOR */
+.calculator{background-color:$color-dark; background-image: url("../images/header-pattern.png"); background-position: center; background-size: cover; margin-top: 80px;
+	.section-title{color: #fff;}
+	.bg-image{width: 40%; height: 100%; position: absolute; right: 0; top: 0; background-size: cover;}
+	.form{width: 100%; display: block; padding: 50px; background: #fff; color: $color-dark; position: relative;
+		.form-group{position: static; margin-bottom: 35px;}
+		.form-group:last-child{margin-bottom: 0;}
+		select{ width: 300px; max-width: 100%; height: 58px; border: 1px solid #e5e5e5; padding: 0 20px;}
+		.custom-checkbox{ height: 58px; line-height: 58px; border: 1px solid #e5e5e5; cursor: pointer; padding: 0 30px; margin-right: 5px;}
+		input[type="checkbox"]{display: none;}
+		input[type="checkbox"]:checked + .custom-checkbox{border-color:$color-main; background: $color-main; color: $color-dark;}
+		.info-box{width: 65%; float: left; margin-top: 50px;}
+		.info-box i{color: #4cd964; font-size: 20px; transform: translateY(2px);}
+		.price-box{  float: right; background: $color-main; padding:30px 50px; margin-right: -50px; margin-bottom: -50px;
+			small{width: 100%; display: block; font-weight: 600; margin-bottom: 5px;}
+			span{font-size: 50px; font-weight: 800; line-height: 1;}}}}
+
+
+
+
+/* STEP BOX */
+.step-box{ width: 100%; display: block; position: relative; z-index: 1;
+	&:hover .image img{filter: grayscale(0);}
+	&:hover:after{content: ""; width: 40%; height: 65px; background: url("../images/pattern-dot.png"); background-size: 12px 12px;  position: absolute; right: -25px; bottom: -25px; z-index: 0;}
+	&:hover .content{bottom: 0;}
+	&:hover .content h6:before{width: 0;}
+	*{@include transition;}
+	.image{width: 100%; display: block; padding-right: 30px;
+		img{width: 100%; filter: grayscale(1);}}
+	.content{width: 80%; position: absolute; right: 0; bottom: -30px; z-index: 1; background: #fff; padding: 40px; box-shadow: 0 0 50px rgba(0,0,0,0.1);
+		.icon{width: 100%; display: block; margin-bottom: 20px;
+			img{height: 70px;}}
+		span{position: absolute; right: 30px; top: 30px; font-weight: 800; opacity: 0.3; font-size: 19px;}
+		h6{ display: inline-block; font-weight: 800; letter-spacing: 2px; position: relative; margin-bottom: 20px;
+			&:before{content: ""; width: 100%; height: 6px; background: $color-main; position: absolute; left: 0; bottom: 0; mix-blend-mode: multiply; @include transition;}}
+		p{width: 100%; display: block; margin: 0; opacity: 0.7;}}}
+
+
+
+/* INFO BOX DARK */
+.info-box-dark{width: 100%; display: block; background: $color-dark; color: #fff; padding: 50px; position: relative;
+	&:after{content: ""; width: 0; height: 0; border-style: solid; border-width: 0 25px 15px 0; border-color: transparent $color-dark transparent transparent; position: absolute; right: 10%; bottom: -15px;}
+	h6{width: 100%; display: block; margin-bottom: 15px; font-weight: 800; font-size: 20px;}
+	p{width: 100%; display: block; opacity: 0.8;}
+	p:last-child{margin-bottom: 0;}}
+
+
+/* CTA BOX YELLOW */
+.cta-box-yellow{width: calc(100% - 50px); display: block; background: $color-main; color: $color-dark; padding: 50px; position: relative; margin-bottom: 148px;
+	h4{width: 100%; display: block; font-weight: 800; margin-bottom: 20px; font-size: 44px;}
+	p{width: 100%; margin-bottom: 25px;}
+	.button{display: inline-block; height: 68px; line-height: 68px; padding: 0 40px; background: $color-dark; color: $color-main; font-size: 13px; font-weight: 600; @include transition;
+		&:hover{text-decoration: none; }}}
+
+
+
+/* SERVICE LIST BOX */
+.services-list-box{width: 100%; display: block; background: #fff; padding: 50px; transform: translateY(100px); margin-bottom: 100px;
+	h4{font-size: 50px; font-weight: 800;}
+	p{width: 100%; display: block; margin-bottom: 20px;}
+	ul{width: 100%; display: block; padding-left: 20px; margin-bottom: 30px;
+		li{margin: 10px 0;}}
+	.button{display: inline-block; height: 68px; line-height: 68px; padding: 0 40px; background: $color-dark; color: #fff; font-size: 13px; font-weight: 600; @include transition;
+		&:hover{text-decoration: none; background: $color-main; color: $color-dark; }}}
+
+
+/* CUSTOM LIST */
+.custom-list{width: 100%; display: block; margin: 0; padding: 0;
+	li{width: 100%; display: block; margin: 0; padding:20px 0; list-style: none; font-size: 20px; font-weight: 600; position: relative;
+		&:hover:before{background: $color-main; width: 100%;}
+		&:before{content: ""; width: 30%; height: 1px; background: #eee; position: absolute; left: 0; bottom: 0; @include transition;}
+		i{font-size: 14px; display: inline-block; margin-right: 8px;}}}
+
+
+
+
+/* CERTIFICATE */
+.certificate{width: 100%; display: block; margin: 0;
+	img{border: 1px solid #e8e8e8; margin-bottom: 20px;}
+	figcaption{font-size: 14px;}}
+
+
+
+/* OUR HISTORY */
+.our-history{width: 100%; display: block; overflow: hidden; position: relative;
+	.swiper-pagination{position: absolute; height: 1px; left:0; top: 50px; background: #eee;}
+	.swiper-pagination-progressbar-fill{background: $color-main;}
+	.swiper-slide:hover b:after{background: $color-main;}
+	.swiper-slide{z-index: 1;}
+	figure{width: 100%; padding: 0 15px;}
+	p{width: 100%; display: block; padding: 0 15px; font-size: 14px;}
+	b{ width: 100%; height: 50px; display: inline-block; margin-bottom: 20px; text-align: center; position: relative;
+		&:after{content: ""; width: 12px; height: 12px; background: #eee; border-radius: 50%; position: absolute; left:calc(50% - 6px); bottom: -6px;}}
+	.controls{width: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; text-align: center; margin-top: 30px;
+			.button-prev{ width: 80px; height: 80px; line-height: 80px; display: inline-block; text-align: center; background: #f2f3f5; border-radius: 50%; color: $color-dark; @include transition; margin: 0 2px;
+				&:hover{background: $color-main;}}
+			.button-next{ width: 80px; height: 80px; line-height: 80px; display: inline-block; text-align: center; background: #f2f3f5; border-radius: 50%; color: $color-dark; @include transition; margin: 0 2px; margin-right: 0;
+				&:hover{background: $color-main;}}}}
+
+
+
+
+/* CORE VALUES BOX */
+.core-values-box{width:100%; display:block; border: 1px solid #e8e8e8; padding: 30px; position: relative; @include transition; margin: 15px 0;
+	&:hover{transform: translateY(-20px); box-shadow: 0 30px 30px #eee;}
+	&:hover h6:before{width: 0;}
+	&:after{content: ""; width: 0; height: 0; border-style: solid; border-width: 0 0 14px 14px; border-color: transparent transparent #e8e8e8 transparent; position: absolute; right: 4px; bottom: 4px;}
+	figure{width: 100%; display: block; margin-bottom:20px;
+		img{height: 80px;}}
+	h6{ display: inline-block; font-weight: 800; letter-spacing: 2px; position: relative;
+		&:before{content: ""; width: 100%; height: 6px; background: $color-main; position: absolute; left: 0; bottom: 0; mix-blend-mode: multiply; @include transition;}}
+	p{font-size: 20px; padding-right: 5%;}}
+
+
+
+
+/* DIRECTOR TEAM */
+.director-team{width:100%; display:flex; flex-wrap: wrap; align-items: center; border: 1px solid #e8e8e8; position: relative; @include transition; margin: 15px 0;
+	&:hover{transform: translateY(-20px); box-shadow: 0 30px 30px #eee;}
+	&:hover h6:before{width: 0;}
+	&:after{content: ""; width: 0; height: 0; border-style: solid; border-width: 0 0 14px 14px; border-color: transparent transparent #e8e8e8 transparent; position: absolute; right: 4px; bottom: 4px;}
+	figure{width: 45%; display: block; margin: 0;}
+	.content{width: 55%; display: inline-block; padding: 0 30px;}
+	h6{ display: inline-block; font-weight: 800; letter-spacing: 2px; position: relative;
+		&:before{content: ""; width: 100%; height: 6px; background: $color-main; position: absolute; left: 0; bottom: 0; mix-blend-mode: multiply; @include transition;}}
+	small{ width: 100%; display: block; font-size: 20px; margin-bottom: 10px;}
+	b{width: 100%; display: block; font-weight: 600;}}
+
+
+
+
+/* SALES TEAM */
+.sales-team{width: 100%; display: block; @include transition; position: relative;
+	&:hover {background: $color-main; transform: translateY(-20px); box-shadow: 0 30px 30px #eee; z-index: 1;}
+	&:hover:after{content: ""; width: 80px; height: 70px; background: url("../images/pattern-dot.png"); background-size: 12px 12px;  position: absolute; left: -30px; top: 30px;}
+	&:hover .infos:after{content: ""; width: 0; height: 0; border-style: solid; border-width: 0 0 14px 14px; border-color: transparent transparent $color-dark transparent; position: absolute; right: 4px; bottom: 4px;}
+	&:hover figure img{mix-blend-mode: multiply;}
+	figure{width: 100%; display: block; margin: 0;
+		img{width: 100%; filter: grayscale(1); @include transition;}}
+	.infos{width: 100%; display: block; text-align: center; padding: 15px 0; position: relative;}
+	h6{width: 100%; display: block;}
+	small{width: 100%; display: block; opacity: 0.5;}
+	b{width: 100%; display: block; font-weight: 600; margin-bottom: 15px;}
+	ul{display: inline-block; margin: 0; padding: 0;
+		li{display: inline-block; margin: 0 6px; padding: 0; list-style: none;
+			a{color: $color-dark; font-size: 13px;}}}}
+
+
+/* TAB CONTENT */
+.tab-left{width: 100%; display: block; background: $color-dark; color: #fff; padding: 50px;
+	h2{ width: 100%; display: block; font-size: 40px; font-weight: 800; margin-bottom: 30px;}
+	ul{width: 100%; display: block; margin-bottom: 50px; padding: 0;
+		li{width: 100%; display: block; margin: 0; padding: 8px 0; list-style: none;
+			&.active a:before{width: 100%;}
+			a{color: #fff; font-size: 22px; font-weight: 800; display: inline-block; position: relative;
+				&:hover{text-decoration: none; color: $color-main;}
+				&:before{content: ""; width: 0; height: 5px; background: $color-main; position: absolute; left: 0; bottom: 0; @include transition;}}}}
+	p{width: 100%; display: block; margin: 0;}}
+.tab-right{width: 100%; display: block;
+	.tab-item{display: none;
+		img{width: 100%;}
+		&:first-child{display: block;}}}
+
+
+
+
+/* VIDEO BOX */
+.video-box{width: 100%; display: block; margin: 0; background: $color-dark; position: relative;
+	.play-btn{width: 70px; height: 70px; line-height: 66px; display: inline-block; position: absolute; right: 50px; top: 100px; z-index: 1; text-align: center; border-radius: 50%; border: 2px solid #fff; color: #fff; font-size: 20px; text-indent: 2px;
+		&:hover{background: $color-main; border-color: $color-main; color: $color-dark;}} 
+	video{width: 100%; display: block; margin: 0; opacity: 0.5; filter: grayscale(1);}}
+
+
+
+
+/* TESTIOMONIALS SLIDER */
+.testimonials-slider{width: calc(100% - 250px); float: right; margin-top: -200px; margin-right: 50px; position: relative; overflow: hidden; 
+	.controls{ display: inline-block; position: static;  margin-top: 30px;
+		.swiper-pagination{width: auto; display: inline-block; position: static; font-size: 26px; color: #9a9a9a;
+			.swiper-pagination-current{font-size: 54px; color: $color-dark;}}
+			.button-prev{ width: 80px; height: 80px; line-height: 80px; display: inline-block; text-align: center; background: $color-main; border-radius: 50%; color: $color-dark; @include transition; margin-left: auto;
+				&:hover{background: $color-dark; color: #fff;}}
+			.button-next{ width: 80px; height: 80px; line-height: 80px; display: inline-block; text-align: center; background: $color-main; border-radius: 50%; color: $color-dark; @include transition; margin-left: 2px; margin-right: 0;
+				&:hover{background: $color-dark; color: #fff;}}}
+	.testimonial{width: 100%; float: left; padding: 30px; background: #fff; position: relative;
+		&:after{content: ""; width: 0; height: 0; border-style: solid; border-width: 0 20px 20px 0; border-color: transparent #fff transparent transparent; position: absolute; bottom: -20px; right: 30px;}
+		p{width: 100%; display: block; margin-bottom: 30px; color: #565656;}
+		i{width: 60px; height: 60px; line-height: 60px; float: left; background: $color-main; color: $color-dark; text-align: center; font-size: 30px; margin-right: 20px; margin-top: -8px;}
+		h6{font-weight: 600; margin-bottom: 0;}}}
+
+
+
+
+/* LOGO ITEMS */
+.logo-item{width: 100%; display: block; margin: 0; @include transition; padding: 0 30px;
+	img{width: 100%;}}
+
+
+
+
+/* RECENT NEWS */
+.recent-news{width: 100%; display: block; position: relative; @include transition;
+	&:hover{transform: translateY(-20px); box-shadow: 0 30px 30px #eee;}
+	&:hover:after{content: ""; width: 70%; height: 70px; background: url("../images/pattern-dot.png"); background-size: 12px 12px;  position: absolute; right: -25px; bottom: -25px; z-index: -1; opacity: 0.2;}
+	&:hover figure img{ filter: none;}
+	&:hover .content h3 a{ background-size: 100% 100%;}
+	figure{width: 100%; max-height: 220px;  display: block; margin: 0; position: relative; overflow: hidden; background: $color-main;
+		img{ width: 100%; max-width: inherit; min-height: 220px; filter: grayscale(1); }}
+	.content{ width: 100%; height: 100%; display: block; padding: 30px; background: #fff; border: 1px solid #e8e8e8; border-top: none; 
+		small{display: inline-block; padding: 4px 8px; background: $color-main; margin-bottom: 20px; color: $color-dark;}
+		h3{width: 100%; display: block; margin-bottom: 30px; font-size: 26px; line-height: 1.4;
+			a{display: inline; background-image: -moz-linear-gradient(rgba(0,0,0,0) calc(99% - 1px),$color-dark 1px);
+    background-image: -webkit-linear-gradient(rgba(0,0,0,0) calc(99% - 1px),$color-dark 1px);
+    background-image: linear-gradient(rgba(0,0,0,0) calc(99% - 1px),$color-dark 1px); background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size 0.5s;
+				&:hover{text-decoration: none;}}}
+		.author{width: 100%; display: block; margin-bottom: 0; font-size: 13px;
+			img{height: 50px; display: inline-block; border-radius: 50%; margin-right: 15px;}
+			b{font-weight: 600;}}
+		}}
+
+
+/* NEWS BOX */
+.news-box{width: 100%; display: block; position: relative; @include transition; margin-bottom: 100px;
+	&:last-child{margin-bottom: 0;}
+	&:after{content: ""; width: 70%; height: 70px; background: url("../images/pattern-dot.png"); background-size: 12px 12px;  position: absolute; right: -25px; bottom: -25px; z-index: -1; opacity: 0.2;}
+	&:hover .content h3 a{ background-size: 100% 100%;}
+	figure{width: 100%; display: block; margin: 0; position: relative; overflow: hidden; background: $color-main;
+		img{ width: 100%; max-width: inherit;  }}
+	.content{ width: 100%; height: 100%; display: block; padding: 30px; background: #fff; border: 1px solid #e8e8e8; border-top: none; 
+		small{display: inline-block; padding: 4px 8px; background: $color-main; margin-bottom: 20px; color: $color-dark;}
+		h3{width: 100%; display: block; margin-bottom: 30px; font-size: 38px; line-height: 1.4;
+			a{display: inline; background-image: -moz-linear-gradient(rgba(0,0,0,0) calc(99% - 1px),$color-dark 1px);
+    background-image: -webkit-linear-gradient(rgba(0,0,0,0) calc(99% - 1px),$color-dark 1px);
+    background-image: linear-gradient(rgba(0,0,0,0) calc(99% - 1px),$color-dark 1px); background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size 0.5s;
+				&:hover{text-decoration: none;}}}
+		.author{width: 100%; display: block; margin-bottom: 0; font-size: 13px;
+			img{height: 50px; display: inline-block; border-radius: 50%; margin-right: 15px;}
+			b{font-weight: 600;}}
+		h6{font-size: 24px; line-height: 1.7; margin: 30px 0;}
+		strong{font-weight: 600;}
+		figure{margin: 30px 0;}
+		blockquote{width: 100%; display: block; padding: 40px; background: $color-main; color: $color-dark; font-size: 19px;}
+		ul{padding-left: 20px;
+			li{margin: 4px 0;}}
+		}}
+
+
+
+/* SIDEBAR */
+.sidebar{width: 100%; display: block; padding-left: 30px;
+	.widget{width: 100%; display: block; border: 1px solid #e8e8e8; padding: 50px; margin-bottom: 50px;
+		&:last-child{margin-bottom: 0;}
+		.widget-title{ width: 100%; display: block; position: relative; z-index: 1; font-weight: 800; letter-spacing: 3px; font-size: 18px; margin-bottom: 30px; padding-bottom: 30px;
+		&:before{content: ""; width: 100%; height: 6px; background: $color-main; position: absolute; left: 0; bottom: 0; z-index: -1; mix-blend-mode: difference;}}
+		form{width:100%; display: block;
+			input[type="submit"]{margin-top: 10px; background: $color-dark; color: #fff;}}
+		.categories{width: 100%; display: block; margin: 0; padding: 0;
+			li{width: 100%; display: block; margin: 4px 0; padding: 0; list-style: none;
+				a{color: $color-dark; font-size: 19px;}}}}}
+
+
+
+
+/* PAGINATION */
+.pagination{ width: 100%; display: flex; flex-wrap: wrap; margin: 0;
+	.page-item{display: inline-block;
+		.page-link{ height: 60px; line-height: 60px; padding: 0 40px; border-radius: 0 !important; font-size: 12px; font-weight: 600; color: $color-dark; outline: none !important;
+			&:focus{outline: none !important;}}}}
+
+
+
+/* FOOTER BAR */
+.footer-bar{width: 100%; display: block; padding: 80px 0; position: relative; overflow: hidden; color: #fff; background-color:#232222; background-image: url("../images/header-pattern.png"); background-position: center; background-size: cover;
+	.logo{width: 100%; display: block; margin-bottom: 30px;
+		img{height: 50px;}}
+	h2{font-size: 60px; font-weight: 800; padding-right: 20%; margin-bottom: 50px;
+				b{-webkit-text-stroke: 1px #fff; text-stroke: 1px #fff; -webkit-text-fill-color: transparent; color: transparent;}}
+	.button{display: inline-block; float: left; height: 68px; line-height: 68px; padding: 0 40px; background: $color-main; color: $color-dark; font-size: 13px; font-weight: 600; @include transition;
+				i{display: inline-block; margin-left: 10px; font-size: 20px; transform: translateY(3px); @include transition;}
+				&:hover{text-decoration: none; 
+					i{margin-left: 20px;}}}
+	.sales-representive{display: inline-block; margin-left: 5vw; line-height: 68px;
+		figure{float: left; margin-right: 10px;
+			img{height: 60px; border-radius: 50%;}}
+		b{display: inline-block; font-weight: 600; position: relative;
+			&:before{content: ""; width: 100%; height: 4px; background: $color-main; position: absolute; left: 0; bottom: 20px;}}}}
+
+
+
+
+/* FOOTER */
+.footer{width: 100%; display: block; background-color:$color-dark; position: relative; padding-top: 80px; color: #fff;
+	.scroll-top{width: 100px; background: $color-main; position: absolute; right: 30px; top: -30px; z-index: 1; color: $color-dark; text-align: center; padding: 15px 0;
+		small{width: 100%; display: block;}}
+	.widget-title{width: 100%; display: block; margin-bottom: 20px; font-weight: 600; opacity: 0.7; letter-spacing: 2px;}
+	address{width: 100%; display: block; margin: 0;
+		p{width: 100%; display: block;}
+		a{display: inline-block; color: #fff; font-weight: 600; font-size: 13px; border-bottom: 3px solid $color-main;
+			&:hover{text-decoration: none; border-color: #fff;}}}
+	form{width: 100%; display: block;
+		input[type="email"]{width: 100%; height: 68px; border: none; background: #232222; padding: 30px; color: #fff; margin-bottom: 15px;}
+		input[type="submit"]{height: 60px; background: $color-main; border: none; padding: 0 40px; font-size: 13px; font-weight: 600;}}
+	.footer-bottom{width: 100%; display: block; margin-top: 50px; border-top: 1px dotted rgba(255,255,255,0.2); padding: 40px 0;
+		span{opacity: 0.7; font-size: 13px;}
+		ul{ float: right; margin: 0; padding: 0;
+			li{display: inline-block; margin-left: 20px; padding: 0; list-style: none;
+				a{opacity: 0.7; font-size: 13px; color: #fff; 
+					&:hover{opacity: 1; text-decoration-color: $color-main;}}}}}}
+
+
+/* SALES SPECIALIST FORM */
+#sales-specialist-form{width: 500px; max-width: 100%; display: none; padding:40px;
+	.form-group span{display: inline-block; margin-left: 12px; background: #fff; padding: 0 6px; transform: translateY(14px); color: rgba(139,139,139,1.00); font-size: 15px;}
+	.form-group:last-child{ margin: 0;}}
+.fancybox-close-small{transform: scale(1.5); top: 10px; right: 10px;}
+
+
+
+/* YES NO SWITCHER*/
+.yes-no{width: 100%; display: block; position: relative; background: $color-dark; border: 4px solid $color-dark;
+	.switch { width: 100%;  height: 50px;  text-align: center; @include transition;
+		span { position: absolute; width: 50%; height: 100%; top: 0; left: 0; background: $color-main; font-weight: 600; @include transition;}}
+	label { cursor: pointer; line-height: 50px; @include transition; font-weight: 600;}
+	label[for=yes] { position: absolute; z-index: 1; left: 0px; width: 50%; height: 100%; margin: 0; color: #fff;}
+	label[for=no] { position: absolute; width: 50%; height: 100%; right: 0px; z-index: 1; color: #fff; margin: 0;}
+	input[type=radio] {  display: none;}
+	#no:checked ~ .switch {  background: $color-main;}
+	#no:checked ~ .switch span {  background: $color-dark;}
+	#no:checked ~ .switch span:after {  background: none;}
+	#yes:checked ~ .switch label[for=yes] {  color: $color-dark;	font-weight: 600;}
+	#no:checked ~ .switch label[for=no] {  color: $color-dark;}}
+
+
+
+/* RANGE SLIDER */
+.range-slider { width: 100%; display: block;}
+.range-slider__range { -webkit-appearance: none; width: 100%; height: 10px; border-radius: 0; background: #f2f2f2; outline: none; padding: 0; margin: 0;}
+.range-slider__range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: $color-main; cursor: pointer; -webkit-transition: background .15s ease-in-out; transition: background .15s ease-in-out;}
+.range-slider__range::-moz-range-thumb { width: 20px; height: 20px; border: 0; border-radius: 50%; background: $color-main; cursor: pointer; -moz-transition: background .15s ease-in-out; transition: background .15s ease-in-out;}
+.range-slider__range:active::-moz-range-thumb {  background: $color-main;}
+.range-slider__range:focus::-webkit-slider-thumb {  box-shadow: 0 0 0 3px #fff, 0 0 0 6px $color-main;}
+.range-slider__value {  display: inline-block;  position: relative;  width: 60px;  color: $color-dark;  line-height: 20px;  text-align: center;  background: $color-main;  padding: 5px 10px;}
+::-moz-range-track {  background: $color-main;  border: 0;}
+input::-moz-focus-inner, input::-moz-focus-outer {  border: 0;}
+
+
+
+
+
+/* RESPONSIVE MEDIUM  */
+@media only screen and (max-width: 1199px), only screen and (max-device-width: 1199px) {
+	.navbar .navbar-button {padding: 0 15px; margin-left: 20px;}
+	.navbar .navbar-button i{margin: 0;}
+	.navbar .navbar-button span{display: none;}
+	.slider .slider-content .inner h2{font-size: 50px;}
+	.counter-box .odometer{font-size: 55px;}
+	.project-slider .swiper-slide{max-width: 70vw;}
+	.calculator .form .info-box{width: 60%;}
+	.logo-item{padding: 0 15px;}
+	.footer-bar h2{padding: 0;}
+}
+
+
+/* RESPONSIVE TABLET  */
+@media only screen and (max-width: 991px), only screen and (max-device-width: 991px) {
+	.side-widget{box-shadow: none;}
+	.side-widget .show-mobile{display: block;}
+	.side-widget .hide-mobile{display: none;}
+	.contact-box{margin: 15px 0;}
+	.contact-box p{font-size: 18px;}
+	.contact-form{margin-bottom: -10%;}
+	.counter-box .value{margin-right: 20px;}
+	.step-box {margin: 15px 0;}
+	.step-box .image{padding-right: 0;}
+	.step-box .content{bottom: 30px; right: 30px;}
+	.accordion{padding-right: 0;}
+	.cta-box-yellow{width: 100%;}
+	.custom-list{margin-top: 30px;}
+	.certificate{margin: 15px 0;}
+	.projects li{width: 100%;}
+	.project-specifications{width: 100%; margin-top: 30px; margin-left: 0;}
+	.sidebar{padding-left: 0; margin-top: 50px;}
+	.navbar .site-menu{display: none;}
+	.navbar .navbar-button span{display: inline-block; margin-left: 6px;}
+	.slider {height: auto;}
+	.slider .slider-main{width: 100%; position: static;}
+	.slider .slider-content{width: 100%; margin-right: 0;}
+	.slider .slider-content .controls .swiper-pagination .swiper-pagination-current{color: #fff;}
+	.icon-content{margin: 15px 0;}
+	.side-content{padding-left: 0; margin-top: 30px;}
+	.col-lg-3:nth-child(even) .counter-box{margin-top: 0;}
+	.counter-box{margin: 15px 0;}
+	.project-slider .swiper-slide{max-width: inherit;}
+	.calculator .form .info-box{width: 100%; margin-top: 0; margin-bottom: 30px;}
+	.calculator .form .price-box{width: calc(100% + 100px);}
+	.row.no-gutters .col{width: 33%; flex-basis: 33%; flex-grow: inherit; margin: 0 auto;}
+	.sales-team{margin: 15px 0;}
+	.logo-item{margin: 15px 0;}
+	.col-lg-5 .recent-news{margin-bottom: 30px;}
+	.footer-bar .sales-representive{margin-left: 0; margin-top: 30px;}
+	.footer address{margin-bottom: 50px;}
+}
+
+
+/* RESPONSIVE MOBILE */
+@media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
+	.side-widget{width: 240px;}
+	.search-box .inner{width: 90vw;}
+	.navbar .navbar-button span{display: none;}
+	.navbar .languages{display: none;}
+	.navbar .navbar-button{margin-left: 0;}
+	.slider .slider-content {margin-bottom: 30px;}
+	.slider .slider-content .controls{padding: 0; width: 100%; display: none;}
+	.slider .slider-content .inner{padding-bottom: 30px;}
+	.slider .slider-content .inner h2{font-size: 40px;}
+	.slider .slider-content .inner p{margin-bottom: 30px;}
+	.icon-content{width: 100%; margin: 15px 0;}
+	.icon-content small{margin-bottom: 30px;}
+	.project-slider .swiper-slide .project-box figcaption{width: 100%; position: static; }
+	.project-slider .swiper-slide .project-box figcaption h5{font-size: 22px;}
+	.project-slider .swiper-slide .project-box figcaption:after{bottom: 0;}
+	.calculator .bg-image{display: none;}
+	.row.no-gutters .col{width: 80%; flex-basis: 80%; margin: 15px 10%;}
+	.testimonials-slider{width: 100%; margin: 0;}
+	.testimonials-slider .controls{display: none;}
+	.recent-news{margin: 15px 0 !important;}
+	.contact-form{padding: 30px;}
+	.news-box .content h3{font-size: 26px;}
+	.sidebar .widget{padding: 30px;}
+	.isotope-filter li{font-size: 15px; margin-right: 20px;}
+	.projects li .project-box figcaption{width: calc(100% - 60px); left: 30px; padding: 20px;}
+	.projects li .project-box figcaption h5{font-size: 25px;}
+	.project-specifications{padding: 30px;}
+	.info-box-dark{padding: 30px;}
+	.cta-box-yellow{padding: 30px;}
+	.cta-box-yellow h4{font-size: 34px;}
+	.calculator .form{padding: 30px;}
+	.footer-bar h2{font-size: 40px;}
+	.footer-bar .sales-representive{line-height: inherit;}
+	.footer-bar .sales-representive b{color: $color-main;}
+	.footer-bar .sales-representive b:before{display: none;}
+	.footer-bar .sales-representive figure{width: 100%;}
+	.footer .scroll-top{right: auto; left: 15px;}
+	.footer .footer-bottom ul{float: left;}
+	.footer .footer-bottom ul li{ margin-left: 0; margin-right: 10px;}
+}
