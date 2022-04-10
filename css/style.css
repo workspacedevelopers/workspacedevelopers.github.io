@@ -1131,11 +1131,11 @@ a:hover {
   border: 1px solid #e8e8e8;
   padding: 30px;
   position: relative;
-  -webkit-transition: all .25s ease-in-out;
-  -moz-transition: all .25s ease-in-out;
-  -ms-transition: all .25s ease-in-out;
-  -o-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out; }
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out; }
   .counter-box:hover {
     transform: translateY(-20px);
     box-shadow: 0 30px 30px #eee; }
@@ -1989,11 +1989,11 @@ a:hover {
 .sales-team {
   width: 100%;
   display: block;
-  -webkit-transition: all .25s ease-in-out;
-  -moz-transition: all .25s ease-in-out;
-  -ms-transition: all .25s ease-in-out;
-  -o-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
   position: relative; }
   .sales-team:hover {
     background: #feed01;
@@ -2695,6 +2695,7 @@ a:hover {
 
 /* SALES SPECIALIST FORM */
 #sales-specialist-form {
+  overflow-x: hidden;
   width: 500px;
   max-width: 100%;
   display: none;

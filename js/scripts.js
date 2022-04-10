@@ -1,5 +1,6 @@
 (function ($) {
   $(document).ready(function () {
+    
     "use strict";
 
 
@@ -236,7 +237,7 @@
       disableOnInteraction: false,
     },
     loop: true,
-    direction: 'vertical',
+    direction: 'horizontal',
     loopedSlides: 1,
     thumbs: {
       swiper: slidercontent
