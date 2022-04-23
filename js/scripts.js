@@ -29,13 +29,24 @@
       $("body").toggleClass("overflow");
     });
 
+    
 
     // HAMBURGER MENU
     $('.hamburger').on('click', function (e) {
       $(this).toggleClass('open');
-      $(".side-widget").toggleClass('active');
+      $(".side-widget").toggleClass('active'); 
       $("body").toggleClass("overflow");
     });
+
+    $('.row, header , section , footer , aside').click(function() { 
+      if( $(".side-widget").toggleClass('active') ) {
+        $(".hamburger").removeClass('open'); 
+      $(".side-widget").removeClass('active'); 
+      $("body").removeClass("overflow");
+      }
+  });
+  
+  
 
 
     // SCROLL TOP
