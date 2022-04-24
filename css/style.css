@@ -91,6 +91,13 @@ theme.
   font-style: normal; }
 * {
   outline: none !important; }
+  /* Google translate Hide  */
+  .goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    } 
+body {
+    top: 0px !important; 
+    }
 
 body {
   margin: 0;

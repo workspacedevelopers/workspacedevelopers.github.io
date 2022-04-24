@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1, user-scalable=0">
 <meta name="theme-color" content="#feed01"/>
 <title>Contact | Workspace</title>
 <meta name="author" content="workspace">
@@ -79,8 +80,8 @@
     <div class="show-mobile">
       <div class="languages">
         <ul>
-          <li><a href="#">en</a></li>
-          <li><a href="#">hn</a></li>
+          <li><a onclick="changeLanguageBack()" href="#">en</a></li>
+          <li><a onclick="changeLanguageByButtonClick()" href="#" >hn</a></li>
         </ul>
       </div>
       <!-- end languages -->
@@ -111,9 +112,11 @@
     <div class="logo"> <a href="index.html"><img src="images/logo.png" alt="Image"></a> </div>
     <!-- end logo -->
     <div class="languages">
+   <div id="google_translate_element" style="display:none"></div>
+
       <ul>
-        <li><a href="#">en</a></li>
-        <li><a href="#">hn</a></li>
+        <li><a onclick="changeLanguageBack()" href="#">en</a></li>
+        <li><a onclick="changeLanguageByButtonClick()" href="#" >hn</a></li>
       </ul>
     </div>
     <!-- end languages -->
@@ -142,7 +145,8 @@
     </div>
     <!-- end hamburger --> 
     <!-- end hamburher --> 
-    <a href="#sales-specialist-form" class="navbar-button" data-fancybox><i class="lni lni-mobile"></i> <span>BECOME A MEMBER</span></a> </div>
+    <a data-options='{"touch" : false}' href="#sales-specialist-form" class="navbar-button" data-fancybox><i class="lni lni-user"></i> <span>BECOME A MEMBER</span></a> </div>
+
   <!-- end container --> 
 </nav>
 <!-- end navbar -->
@@ -245,7 +249,7 @@
 </section>
 <!-- end content-section -->
 		<section class="content-section no-spacing">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2280.946732017157!2d6.139779638725402!3d46.19997236441594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c652ab04e9aaf%3A0xf17a439abec4708d!2sSkatepark%20of%20Plainpalais!5e0!3m2!1str!2str!4v1592672296075!5m2!1str!2str" frameborder="0" class="google-maps" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.329148022282!2d76.88228941456917!3d8.564314698452131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bee2c53009c5%3A0x6510861b288460a1!2sUniversity%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1650805769215!5m2!1sen!2sin" frameborder="0" class="google-maps" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 </section>
 <!-- end content-section -->
 <section class="footer-bar">
@@ -276,7 +280,7 @@
         <p>Golden Jubillee Complex - UCEK<br>
         University of Kerala - Trivandrum</p>
         <p>(+91) 944 729 4841, (+91) 701 298 1448</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=centurylink+field" data-fancybox data-width="640" data-height="360">FIND US ON MAP</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=university+college+of+engineering+kariavattom" data-fancybox data-width="640" data-height="360">FIND US ON MAP</a>
         </address>
       </div>
       <!-- end col-4 -->
@@ -286,7 +290,7 @@
         <p>Golden Jubillee Complex - UCEK<br>
         University of Kerala - Trivandrum</p>
         <p>(+91) 944 729 4841, (+91) 701 298 1448</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=centurylink+field" data-fancybox data-width="640" data-height="360">FIND US ON MAP</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=university+college+of+engineering+kariavattom" data-fancybox data-width="640" data-height="360">FIND US ON MAP</a>
         </address>
       </div>
       <!-- end col-4 -->
@@ -347,6 +351,7 @@
 <script src="js/fancybox.min.js"></script> 
 <script src="js/odometer.min.js"></script> 
 <script src="js/isotope.min.js"></script> 
+<script src="js/translate.js"></script>
 <script src="js/scripts.js"></script>
 </body>
 </html>

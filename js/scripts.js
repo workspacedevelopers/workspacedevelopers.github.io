@@ -38,7 +38,7 @@
       $("body").toggleClass("overflow");
     });
 
-    $('.row, header , section , footer , aside').click(function() { 
+    $('.row, header , section , footer ').click(function() { 
       if( $(".side-widget").toggleClass('active') ) {
         $(".hamburger").removeClass('open'); 
       $(".side-widget").removeClass('active'); 
@@ -360,3 +360,42 @@
 
 
 })(jQuery);
+
+
+// Google translate 
+
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: "en"}, 'google_translate_element');
+}
+
+function changeLanguageByButtonClick() {
+  var language = 'hi';
+  var selectField = document.querySelector("#google_translate_element select");
+  for(var i=0; i < selectField.children.length; i++){
+    var option = selectField.children[i];
+    // find desired langauge and change the former language of the hidden selection-field 
+    if(option.value==language){
+       selectField.selectedIndex = i;
+       // trigger change event afterwards to make google-lib translate this side
+       selectField.dispatchEvent(new Event('change'));
+       break;
+    }
+  }
+}
+
+function changeLanguageBack() {
+  var language = 'en';
+  var selectField = document.querySelector("#google_translate_element select");
+  for(var i=0; i < selectField.children.length; i++){
+    var option = selectField.children[i];
+    // find desired langauge and change the former language of the hidden selection-field 
+    if(option.value==language){
+       selectField.selectedIndex = i;
+       // trigger change event afterwards to make google-lib translate this side
+       selectField.dispatchEvent(new Event('change'));
+       selectField.dispatchEvent(new Event('change'));
+       break;
+    }
+  }
+}

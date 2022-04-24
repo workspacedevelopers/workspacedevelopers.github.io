@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1, user-scalable=0">
 <meta name="theme-color" content="#feed01"/>
 <title>Workspace</title>
 <meta name="author" content="workspace">
@@ -79,8 +80,8 @@
     <div class="show-mobile">
       <div class="languages">
         <ul>
-          <li><a href="#">en</a></li>
-          <li><a href="#">hn</a></li>
+          <li><a onclick="changeLanguageBack()" >en</a></li>
+        <li><a onclick="changeLanguageByButtonClick()" href="#" >hn</a></li>
         </ul>
       </div>
       <!-- end languages -->
@@ -111,9 +112,11 @@
     <div class="logo"> <a href="index.html"><img src="images/logo.png" alt="Image"></a> </div>
     <!-- end logo -->
     <div class="languages">
+      <!-- Google Translate div hidden  -->
+   <div id="google_translate_element" style="display:none"></div>
       <ul>
-        <li><a href="#">en</a></li>
-        <li><a href="#">hn</a></li>
+        <li><a onclick="changeLanguageBack()" href="#">en</a></li>
+        <li><a onclick="changeLanguageByButtonClick()" href="#" >hn</a></li>
       </ul>
     </div>
     <!-- end languages -->
@@ -140,7 +143,7 @@
       <div id="hamburger"> <span></span> <span></span> <span></span> </div>
       <div id="cross"> <span></span> <span></span> </div>
     </div>
-    <!-- end hamburher --> 
+    <!-- end hamburger --> 
     <a data-options='{"touch" : false}' href="#sales-specialist-form" class="navbar-button" data-fancybox><i class="lni lni-user"></i> <span>BECOME A MEMBER</span></a> </div>
   <!-- end container --> 
 </nav>
@@ -321,7 +324,7 @@
   <!-- end container --> 
 </section>
 <!-- end content-section -->
-<section class="content-section white-space-bottom" data-background="#f7f6f1">
+<section class="content-section " data-background="#f7f6f1">
   <div class="container">
     <div class="row">
       <div class="col-lg-7">
@@ -374,120 +377,6 @@
     <div class="swiper-pagination"></div>
   </div>
   <!-- end project-slider --> 
-</section>
-<!-- end content-section -->
-<section class="content-section no-spacing">
-  <div class="container">
-    <div class="row no-gutters">
-      <div class="col-12">
-        <div class="section-title text-left">
-          <h6>WHAT WE DO</h6>
-          <h2>Catalogue of Work</h2>
-        </div>
-        <!-- end section-title --> 
-      </div>
-      <!-- end col-12 -->
-      <div class="col-lg-4 col-md-6"> <a href="projects.html" class="sector-box"> <span>Software Projects</span> <i class="lni lni-arrow-right"></i> </a> </div>
-      <!-- end col-4 -->
-      
-      <div class="col-lg-4 col-md-6"> <a href="projects.html" class="sector-box"> <span>Research Papers</span> <i class="lni lni-arrow-right"></i> </a> </div>
-      <!-- end col-4 -->
-      
-      <div class="col-lg-4 col-md-6"> <a href="projects.html" class="sector-box"> <span>Blogs and Articles</span> <i class="lni lni-arrow-right"></i> </a> </div>
-      <!-- end col-4 -->
-      
-      <div class="col-lg-4 col-md-6"> <a href="projects.html" class="sector-box"> <span>Entrepreneurship Forums</span> <i class="lni lni-arrow-right"></i> </a> </div>
-      <!-- end col-4 -->
-      
-      <div class="col-lg-4 col-md-6"> <a href="projects.html" class="sector-box"> <span>Surveys and Reports</span> <i class="lni lni-arrow-right"></i> </a> </div>
-      <!-- end col-4 -->
-      
-      <div class="col-lg-4 col-md-6"> <a href="projects.html" class="sector-box"> <span>Design Thinking Projects</span> <i class="lni lni-arrow-right"></i> </a> </div>
-      <!-- end col-4 --> 
-    </div>
-    <!-- end row --> 
-  </div>
-  <!-- end container --> 
-</section>
-<!-- end content-section -->
-<section class="content-section calculator">
-  <div class="bg-image" data-background="images/section-bg01.jpg"></div>
-  <!-- end bg-image -->
-  <div class="container">
-    <div class="row no-gutters">
-      <div class="col-12">
-        <div class="section-title text-left">
-          <h6>EXPLORE MORE</h6>
-          <h2>WKSP in a Nutshell</h2>
-        </div>
-        <!-- end section-title --> 
-      </div>
-      <!-- end col-12 -->
-      <div class="col-lg-10">
-        <form class="form">
-          <div class="row">
-            
-            <!-- end form-group -->
-            <div class="form-group col-lg-4 col-md-6">
-              <p>Partner Institutes</p>
-              <select>
-                <option>University College of Engineering, Kariavattom</option>
-              </select>
-            </div>
-            <!-- end form-group -->
-            
-            <div class="form-group col-lg-4 col-md-6">
-              <p>Partner Communities:</p>
-              <select>
-                <option>Microsoft Learn Student Ambassador</option>
-                <option>Dell Campassador</option>
-                <option>Languify</option>
-              </select>
-            </div>
-            <!-- end form-group -->
-            
-            <div class="form-group col-lg-4 col-md-12">
-              <p>Free Resources:</p>
-              <div class="yes-no">
-                <input type="radio" name="rdo" id="yes" checked />
-                <input type="radio" name="rdo" id="no"/>
-                <div class="switch">
-                  <label for="yes">Yes</label>
-                  <label for="no">No</label>
-                  <span></span> </div>
-              </div>
-              <!-- end yes-no --> 
-            </div>
-            <!-- end form-group -->
-            <div class="form-group col-12">
-              <p>Core Team Structure</p>
-              <input type="checkbox" id="one" checked>
-              <label class="custom-checkbox" for="one">Engineering</label>
-              <input type="checkbox" id="two">
-              <label class="custom-checkbox" for="two">Operations</label>
-              <input type="checkbox" id="three">
-              <label class="custom-checkbox" for="three">Design</label>
-              <input type="checkbox" id="four">
-              <label class="custom-checkbox" for="four">Research and Development</label>
-            </div>
-            <!-- end form-group -->
-            <div class="form-group col-12">
-              <div class="info-box"> <i class="lni lni-checkmark-circle"></i> Explore resources offered by us in the certifications section</div>
-              <!-- end info-box -->
-              <div class="price-box"> <small>Registrations:</small> <span>> 1189</span> </div>
-              <!-- end price-box --> 
-            </div>
-            <!-- end form-group --> 
-          </div>
-          <!-- end form row -->
-        </form>
-        <!-- end mortgage-form --> 
-      </div>
-      <!-- end col-9 --> 
-    </div>
-    <!-- end row --> 
-  </div>
-  <!-- end container --> 
 </section>
 <!-- end content-section -->
 <section class="content-section">
@@ -731,7 +620,7 @@
               <figure> <img src="images/blog03.jpg" alt="Image"> </figure>
               <div class="content"> <small>22 November, 2020</small>
                 <h3><a href="https://medium.com/workspace/nano-avionics-the-future-of-commercial-space-363fce992d1b?source=collection_home---5------2-----------------------">Nano-Avionics: The Untalked Future of the Space Industry</a></h3>
-                <div class="author"> <img src="images/author03.jpg" alt="Image"> <span>by <b>Shruti Sugathan</b></span> </div>
+                <div class="author"> <img src="images/author03.png" alt="Image"> <span>by <b>Anu Surajamata</b></span> </div>
                 <!-- end author --> 
               </div>
               <!-- end content --> 
@@ -777,7 +666,7 @@
         <p>Golden Jubillee Complex - UCEK<br>
         University of Kerala - Trivandrum</p>
         <p>(+91) 944 729 4841, (+91) 701 298 1448</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=centurylink+field" data-fancybox data-width="640" data-height="360">FIND US ON MAP</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=university+college+of+engineering+kariavattom" data-fancybox data-width="640" data-height="360">FIND US ON MAP</a>
         </address>
       </div>
       <!-- end col-4 -->
@@ -787,7 +676,7 @@
         <p>Golden Jubillee Complex - UCEK<br>
         University of Kerala - Trivandrum</p>
         <p>(+91) 944 729 4841, (+91) 701 298 1448</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=centurylink+field" data-fancybox data-width="640" data-height="360">FIND US ON MAP</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=university+college+of+engineering+kariavattom" data-fancybox data-width="640" data-height="360">FIND US ON MAP</a>
         </address>
       </div>
       <!-- end col-4 -->
@@ -848,6 +737,10 @@
 <script src="js/fancybox.min.js"></script> 
 <script src="js/odometer.min.js"></script> 
 <script src="js/isotope.min.js"></script> 
+<script src="js/translate.js"></script>
 <script src="js/scripts.js"></script>
+
+   
+
 </body>
 </html>
