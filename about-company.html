@@ -628,9 +628,10 @@
       <div class="col-lg-4">
         <h6 class="widget-title">NEWSLETTER</h6>
         <p>Sign up for latest developer news from WKSP</p>
-        <form>
+        <form id="g-form_1" onsubmit="document.getElementById('formSubmit_1').disabled=true;
+        document.getElementById('formSubmit_1').value='Submitting, please wait...';">
           <input type="email" placeholder="Enter your e-mail">
-          <input type="submit" value="SIGN UP">
+          <input id="formSubmit_1" type="submit" value="SIGN UP">
         </form>
       </div>
       <!-- end col-4 -->
@@ -654,7 +655,8 @@
 </footer>
 <!-- end footer -->
 <div id="sales-specialist-form">
-  <form>
+  <form id="g-form" onsubmit="document.getElementById('formSubmit').disabled=true;
+  document.getElementById('formSubmit').value='Submitting, please wait...';">
     <div class="form-group"> <span>Full Name</span>
       <input type="text">
     </div>
@@ -668,7 +670,7 @@
     </div>
     <!-- end form-group -->
     <div class="form-group">
-      <input type="submit" value="BECOME A MEMBER">
+      <input id="formSubmit" type="submit" value="BECOME A MEMBER">
     </div>
     <!-- end form-group -->
   </form>
@@ -676,6 +678,7 @@
 <!-- end sales-specialist-form --> 
 
 <!-- JS FILES --> 
+<script src="./js/ajax.js"></script>
 <script src="js/jquery.min.js"></script> 
 <script src="js/bootstrap.min.js"></script> 
 <script src="js/swiper.min.js"></script> 

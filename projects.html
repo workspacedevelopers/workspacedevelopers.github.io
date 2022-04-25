@@ -176,7 +176,7 @@
 	  	<div class="col-12">
 			<ul class="projects">
 				<li class="one">
-				 <figure class="project-box"> <a href="project-single.html"><img src="images/proj1.jpg" alt="Image"></a>
+				 <figure class="project-box"> <a href="https://github.com/workspacedevelopers/elxsi"><img src="images/proj1.jpg" alt="Image"></a>
           <figcaption>
             <h5>Elxsi Python Package</h5>
           </figcaption>
@@ -185,7 +185,7 @@
 				</li>
 				<!-- end li -->
 				<li class="two">
-				 <figure class="project-box"> <a href="project-single.html"><img src="images/proj2.jpg" alt="Image"></a>
+				 <figure class="project-box"> <a href="https://github.com/ucekdsc/Bookmark"><img src="images/proj2.jpg" alt="Image"></a>
           <figcaption>
             <h5>Bookmark Extension</h5>
           </figcaption>
@@ -194,7 +194,7 @@
 				</li>
 				<!-- end li -->
 				<li class="three">
-				 <figure class="project-box"> <a href="project-single.html"><img src="images/proj4.jpg" alt="Image"></a>
+				 <figure class="project-box"> <a href="#"><img src="images/proj4.jpg" alt="Image"></a>
           <figcaption>
             <h5>Kiwi Application</h5>
           </figcaption>
@@ -203,7 +203,7 @@
 				</li>
 				<!-- end li -->
 				<li class="one">
-				 <figure class="project-box"> <a href="project-single.html"><img src="images/proj3.jpg" alt="Image"></a>
+				 <figure class="project-box"> <a href="https://github.com/suryan-s/AWS-v0.1"><img src="images/proj3.jpg" alt="Image"></a>
           <figcaption>
             <h5>Weather Station</h5>
           </figcaption>
@@ -265,9 +265,10 @@
       <div class="col-lg-4">
         <h6 class="widget-title">NEWSLETTER</h6>
         <p>Sign up for latest developer news from WKSP</p>
-        <form>
+        <form id="g-form_1" onsubmit="document.getElementById('formSubmit_1').disabled=true;
+        document.getElementById('formSubmit_1').value='Submitting, please wait...';">
           <input type="email" placeholder="Enter your e-mail">
-          <input type="submit" value="SIGN UP">
+          <input id="formSubmit_1" type="submit" value="SIGN UP">
         </form>
       </div>
       <!-- end col-4 -->
@@ -291,7 +292,8 @@
 </footer>
 <!-- end footer -->
 <div id="sales-specialist-form">
-  <form>
+  <form id="g-form" onsubmit="document.getElementById('formSubmit').disabled=true;
+  document.getElementById('formSubmit').value='Submitting, please wait...';">
     <div class="form-group"> <span>Full Name</span>
       <input type="text">
     </div>
@@ -305,7 +307,7 @@
     </div>
     <!-- end form-group -->
     <div class="form-group">
-      <input type="submit" value="BECOME A MEMBER">
+      <input id="formSubmit" type="submit" value="BECOME A MEMBER">
     </div>
     <!-- end form-group -->
   </form>
@@ -313,6 +315,7 @@
 <!-- end sales-specialist-form --> 
 
 <!-- JS FILES --> 
+<script src="./js/ajax.js"></script>
 <script src="js/jquery.min.js"></script> 
 <script src="js/bootstrap.min.js"></script> 
 <script src="js/swiper.min.js"></script> 

@@ -1265,6 +1265,8 @@ a:hover {
   .contact-form .form-group:last-child {
     margin-bottom: 0; }
 
+    
+
 /* ISOTOPE FILTER */
 .isotope-filter {
   width: 100%;
@@ -2717,7 +2719,12 @@ a:hover {
     font-size: 15px; }
   #sales-specialist-form .form-group:last-child {
     margin: 0; }
-
+#form-sucess{
+  visibility: hidden;
+}
+#sales-soecialist-form active{
+  visibility: visible !important;
+}
 .fancybox-close-small {
   transform: scale(1.5);
   top: 10px;
