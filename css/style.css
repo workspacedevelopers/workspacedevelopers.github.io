@@ -91,6 +91,13 @@ theme.
   font-style: normal; }
 * {
   outline: none !important; }
+  /* Google translate Hide  */
+  .goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    } 
+body {
+    top: 0px !important; 
+    }
 
 body {
   margin: 0;
@@ -1131,11 +1138,11 @@ a:hover {
   border: 1px solid #e8e8e8;
   padding: 30px;
   position: relative;
-  -webkit-transition: all .25s ease-in-out;
-  -moz-transition: all .25s ease-in-out;
-  -ms-transition: all .25s ease-in-out;
-  -o-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out; }
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out; }
   .counter-box:hover {
     transform: translateY(-20px);
     box-shadow: 0 30px 30px #eee; }
@@ -1257,6 +1264,8 @@ a:hover {
     width: 100%; }
   .contact-form .form-group:last-child {
     margin-bottom: 0; }
+
+    
 
 /* ISOTOPE FILTER */
 .isotope-filter {
@@ -1989,11 +1998,11 @@ a:hover {
 .sales-team {
   width: 100%;
   display: block;
-  -webkit-transition: all .25s ease-in-out;
-  -moz-transition: all .25s ease-in-out;
-  -ms-transition: all .25s ease-in-out;
-  -o-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
   position: relative; }
   .sales-team:hover {
     background: #feed01;
@@ -2695,6 +2704,7 @@ a:hover {
 
 /* SALES SPECIALIST FORM */
 #sales-specialist-form {
+  overflow-x: hidden;
   width: 500px;
   max-width: 100%;
   display: none;
@@ -2709,7 +2719,12 @@ a:hover {
     font-size: 15px; }
   #sales-specialist-form .form-group:last-child {
     margin: 0; }
-
+#form-sucess{
+  visibility: hidden;
+}
+#sales-soecialist-form active{
+  visibility: visible !important;
+}
 .fancybox-close-small {
   transform: scale(1.5);
   top: 10px;

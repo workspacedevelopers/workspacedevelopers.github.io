@@ -1,5 +1,6 @@
 (function ($) {
   $(document).ready(function () {
+
     "use strict";
 
 
@@ -29,12 +30,23 @@
     });
 
 
+
     // HAMBURGER MENU
     $('.hamburger').on('click', function (e) {
       $(this).toggleClass('open');
       $(".side-widget").toggleClass('active');
       $("body").toggleClass("overflow");
     });
+
+    $('.row, header , section , footer ').click(function () {
+      if ($(".side-widget").toggleClass('active')) {
+        $(".hamburger").removeClass('open');
+        $(".side-widget").removeClass('active');
+        $("body").removeClass("overflow");
+      }
+    });
+
+
 
 
     // SCROLL TOP
@@ -67,13 +79,19 @@
       }
     });
 
+    window.onpageshow= function(event) {
+      if(event.persisted){
+        window.location.reload();
+      }
+    };
+
 
     // LOGO HOVER
     $(".logo-item").hover(function () {
-        $('.logo-item').not(this).css({
-          "opacity": "0.3"
-        });
-      },
+      $('.logo-item').not(this).css({
+        "opacity": "0.3"
+      });
+    },
       function () {
         $('.logo-item').not(this).css({
           "opacity": "1"
@@ -158,7 +176,7 @@
       nextEl: '.button-next',
       prevEl: '.button-prev',
     },
-	  breakpoints: {
+    breakpoints: {
       640: {
         slidesPerView: 2,
         spaceBetween: 0,
@@ -236,7 +254,7 @@
       disableOnInteraction: false,
     },
     loop: true,
-    direction: 'vertical',
+    direction: 'horizontal',
     loopedSlides: 1,
     thumbs: {
       swiper: slidercontent
@@ -265,7 +283,7 @@
   if ($(".slider-main")[0]) {
     mainslider.controller.control = slidercontent;
     slidercontent.controller.control = mainslider;
-  } else {}
+  } else { }
 
 
   // DATA BACKGROUND IMAGE
@@ -348,3 +366,85 @@
 
 
 })(jQuery);
+
+
+// Google translate 
+
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({ pageLanguage: "en" }, 'google_translate_element');
+}
+
+function changeLanguageByButtonClick() {
+  var language = 'hi';
+  var selectField = document.querySelector("#google_translate_element select");
+  for (var i = 0; i < selectField.children.length; i++) {
+    var option = selectField.children[i];
+    // find desired langauge and change the former language of the hidden selection-field 
+    if (option.value == language) {
+      selectField.selectedIndex = i;
+      // trigger change event afterwards to make google-lib translate this side
+      selectField.dispatchEvent(new Event('change'));
+      break;
+    }
+  }
+}
+
+function changeLanguageBack() {
+  var language = 'en';
+  var selectField = document.querySelector("#google_translate_element select");
+  for (var i = 0; i < selectField.children.length; i++) {
+    var option = selectField.children[i];
+    // find desired langauge and change the former language of the hidden selection-field 
+    if (option.value == language) {
+      selectField.selectedIndex = i;
+      // trigger change event afterwards to make google-lib translate this side
+      selectField.dispatchEvent(new Event('change'));
+      selectField.dispatchEvent(new Event('change'));
+      break;
+    }
+  }
+}
+
+
+
+
+// Form Data Transfer Using Ajax
+ 
+
+$("#g-form").submit((e)=>{
+e.preventDefault()
+$.ajax({
+  url:"https://script.google.com/macros/s/AKfycbwoCcQ5aQ-jb85HgJO4TzYsu--_lQT30hUgQlLXun1pFf_Llu5lYJ0B5exfCjBEJiQz/exec",
+  data:$("#g-form").serialize(),
+  method:"post",
+  success:function (response){
+      alert("Form submitted successfully")
+      window.location.reload()
+      // window.location.href="https://google.com"
+  },
+  error:function (err){
+      alert("Something Error")
+
+  }
+})
+})
+
+
+$("#g-form_1").submit((e)=>{
+e.preventDefault()
+$.ajax({
+  url:"https://script.google.com/macros/s/AKfycbwTInSnO0L7qJ7uThdFdn0i-Xyv2jr9QM2GT5oZN69AXaMZRu78I-M_OtgBueipaSYlPQ/exec",
+  data:$("#g-form_1").serialize(),
+  method:"post",
+  success:function (response){
+      alert("Form submitted successfully")
+      window.location.reload()
+      // window.location.href="https://google.com"
+  },
+  error:function (err){
+      alert("Something Error")
+
+  }
+})
+})
