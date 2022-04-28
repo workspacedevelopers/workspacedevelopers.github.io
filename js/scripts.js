@@ -79,6 +79,12 @@
       }
     });
 
+    window.onpageshow= function(event) {
+      if(event.persisted){
+        window.location.reload();
+      }
+    };
+
 
     // LOGO HOVER
     $(".logo-item").hover(function () {
